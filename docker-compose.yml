@@ -1,0 +1,131 @@
+# ============================================================
+# BankAI Pro — Docker Compose Orchestration
+# ============================================================
+# Services:
+#   postgres   → PostgreSQL 16 database
+#   ml_service → Python FastAPI ML + LangChain (port 8000)
+#   backend    → Node.js Express API Gateway  (port 5000)
+#   frontend   → React.js + Nginx             (port 3000)
+#
+# Quick Start:
+#   1. Copy env: cp .env.docker.example .env
+#   2. Add your GOOGLE_API_KEY to .env
+#   3. docker compose up --build
+#   4. Open http://localhost:3000
+# ============================================================
+
+version: '3.9'
+
+services:
+
+  # ── PostgreSQL Database ──────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: bankai_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bankai_db}
+      POSTGRES_USER: ${POSTGRES_USER:-bankai_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bankai_pass}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/src/db/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bankai_user} -d ${POSTGRES_DB:-bankai_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bankai_net
+
+  # ── Python ML Service (FastAPI + LangChain) ──────────────────
+  ml_service:
+    build:
+      context: ./ml_service
+      dockerfile: Dockerfile
+    container_name: bankai_ml_service
+    restart: unless-stopped
+    environment:
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      MODEL_DIR: /app/models
+    volumes:
+      - ./ml_service/models:/app/models:ro
+      - ./ml_service/rag:/app/rag:ro
+      - ml_uploads:/app/uploads
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - bankai_net
+
+  # ── Node.js Express Backend ──────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bankai_backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bankai_user}:${POSTGRES_PASSWORD:-bankai_pass}@postgres:5432/${POSTGRES_DB:-bankai_db}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-64-chars-minimum}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change-me-refresh-secret-64-chars}
+      JWT_EXPIRES_IN: 15m
+      JWT_REFRESH_EXPIRES_IN: 7d
+      ML_SERVICE_URL: http://ml_service:8000
+      FRONTEND_URL: http://localhost:3000
+      LOG_LEVEL: info
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ml_service:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:5000/health', r => process.exit(r.statusCode === 200 ? 0 : 1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    networks:
+      - bankai_net
+
+  # ── React.js Frontend (Nginx) ─────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:5000/api
+    container_name: bankai_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - bankai_net
+
+# ── Named Volumes ─────────────────────────────────────────────
+volumes:
+  postgres_data:
+    driver: local
+  ml_uploads:
+    driver: local
+
+# ── Networks ──────────────────────────────────────────────────
+networks:
+  bankai_net:
+    driver: bridge

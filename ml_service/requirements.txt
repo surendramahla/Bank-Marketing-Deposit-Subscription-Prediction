@@ -1,0 +1,51 @@
+# ============================================================
+# BankAI Pro - ML Service Requirements
+# ============================================================
+# Install: pip install -r requirements.txt
+# Python: 3.10+ recommended
+# ============================================================
+
+# ── Web Framework ────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9       # Required for FastAPI file uploads
+
+# ── Pydantic (Data Validation) ───────────────────────────────
+pydantic==2.7.4
+pydantic-settings==2.3.4
+
+# ── ML / Data Science (Original dependencies preserved) ──────
+scikit-learn==1.8.0
+pandas==2.3.3
+numpy==2.3.5
+joblib==1.5.3
+imbalanced-learn==0.14.2      # Required to load pipeline.pkl (SMOTE)
+shap==0.46.0                  # SHAP explainability
+
+# ── LangChain Core ───────────────────────────────────────────
+langchain==0.2.6
+langchain-core==0.2.10
+langchain-community==0.2.6
+
+# ── LLM Providers (both supported, select via LLM_PROVIDER env var) ──
+langchain-google-genai==1.0.6  # For Google Gemini (default)
+langchain-openai==0.1.14       # For OpenAI GPT-4o (optional)
+google-generativeai==0.7.2     # Gemini SDK
+
+# ── RAG / Vector Store ───────────────────────────────────────
+chromadb==0.5.3               # Vector database for RAG
+langchain-chroma==0.1.2       # LangChain ChromaDB integration
+
+# ── Environment & Config ─────────────────────────────────────
+python-dotenv==1.0.1
+
+# ── HTTP Client (for inter-service calls) ────────────────────
+httpx==0.27.0
+
+# ── Logging & Monitoring ─────────────────────────────────────
+structlog==24.2.0
+
+# ── Development / Testing ────────────────────────────────────
+pytest==8.2.2
+pytest-asyncio==0.23.7
+httpx==0.27.0                  # TestClient for FastAPI tests

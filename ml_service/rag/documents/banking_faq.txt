@@ -1,0 +1,45 @@
+BANK TERM DEPOSIT - FREQUENTLY ASKED QUESTIONS (FAQ)
+=====================================================
+
+Q: What is a term deposit?
+A: A term deposit is a fixed-term investment where a customer deposits money with the bank for a specific period at a predetermined interest rate. The money is locked in for the term, and at maturity, the customer receives their principal plus interest. Terms typically range from 1 month to 5 years.
+
+Q: What are the benefits of a term deposit?
+A: Key benefits include: guaranteed returns with no market risk, higher interest rates than regular savings accounts, capital security as funds are insured up to regulatory limits, predictable income for financial planning, and automatic renewal options.
+
+Q: Who is most likely to subscribe to a term deposit?
+A: Research shows higher subscription rates among: customers with higher account balances (>€5,000), retired customers seeking stable income, management and professional workers, customers with no existing personal loans, and those previously contacted with a successful outcome.
+
+Q: What is the minimum deposit amount?
+A: The minimum deposit is typically €500. Higher deposits generally receive preferential interest rates, with premium tiers at €5,000, €10,000, and €50,000.
+
+Q: Can customers withdraw early?
+A: Early withdrawal is possible but may incur a penalty fee, typically 30-90 days of interest forfeiture. Customers should be informed of this at the time of subscription to set correct expectations.
+
+Q: How does the interest rate compare to a savings account?
+A: Term deposit rates are typically 0.5% to 2.0% higher than standard savings accounts, depending on the term length and amount. Longer terms generally offer better rates.
+
+Q: What happens at maturity?
+A: At maturity, the bank will contact the customer to either: renew the term deposit (at current rates), transfer to a savings account, or withdraw the funds. Automated renewal is available as a default option.
+
+Q: Are term deposits insured?
+A: Yes, deposits are protected by government deposit guarantee schemes, typically up to €100,000 per customer per institution in the European Union.
+
+Q: What information does the bank need to open a term deposit?
+A: Customers need: valid government ID, proof of address (utility bill or bank statement), source of funds declaration for amounts over €10,000, and completed application form.
+
+Q: How long does account setup take?
+A: For existing customers, setup takes 15-30 minutes via phone or branch visit, or 5-10 minutes through digital banking. For new customers, KYC verification adds 1-2 business days.
+
+Q: What is the best time to contact customers about term deposits?
+A: Bank data shows highest conversion rates for calls made: Tuesday through Thursday, between 9AM-12PM and 3PM-6PM. Avoid Mondays (lower receptivity) and Fridays (end-of-week distraction).
+
+Q: How should bank employees handle customer objections?
+A: Common objections and responses:
+- "I need access to my money": Offer shorter 30-day terms or mention the emergency withdrawal option
+- "Interest rates are low": Compare to current savings account rate and highlight capital safety
+- "I want to invest in stocks": Acknowledge risk appetite and suggest a blended approach
+- "I need to think about it": Schedule a specific callback time within 48 hours
+
+Q: What is the typical term deposit conversion rate?
+A: Industry average conversion rate is 11-15% for cold calls. Warm leads with previous positive contact history show conversion rates of 25-40%. Targeted high-probability AI predictions can push conversion to 45-60%.

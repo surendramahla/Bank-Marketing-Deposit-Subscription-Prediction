@@ -1,0 +1,36 @@
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+ml_service/venv/
+ml_service/.env
+ml_service/uploads/
+ml_service/rag/chroma_db/
+
+# ── Node.js ──────────────────────────────────────────────────
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+npm-debug.log*
+backend/.env
+frontend/.env.local
+
+# ── Build Outputs ─────────────────────────────────────────────
+frontend/dist/
+frontend/build/
+
+# ── Secrets ───────────────────────────────────────────────────
+.env
+*.env.local
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Uploads & Logs ────────────────────────────────────────────
+uploads/
+logs/
+*.log

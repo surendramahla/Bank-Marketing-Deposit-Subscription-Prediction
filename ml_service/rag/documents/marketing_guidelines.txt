@@ -1,0 +1,113 @@
+BANK MARKETING - STRATEGY & SEGMENTATION GUIDE
+===============================================
+
+CUSTOMER SEGMENTATION FRAMEWORK
+---------------------------------
+
+HIGH PRIORITY LEADS (Probability > 70%)
+- Immediate action required within 24 hours
+- Assign to senior relationship managers
+- Offer: Premium Gold Term Deposit with bonus rate
+- Channel: Direct phone call + digital confirmation link
+- Script: Use confidence-building language, offer premium benefits
+- Follow-up: Same day confirmation email
+
+MEDIUM PRIORITY LEADS (Probability 40-70%)
+- Action within 3-5 business days
+- Assign to mid-level sales staff
+- Offer: Standard Term Deposit + tax benefits information
+- Channel: Phone call followed by email summary
+- Script: Focus on stability, safety, and tax advantages
+- Follow-up: Follow up call after 5 business days if no response
+
+LOW PRIORITY LEADS (Probability < 40%)
+- Low-cost automated outreach only
+- Do not dedicate expensive phone time
+- Offer: Information pack + digital signup link
+- Channel: Email, SMS, or digital banking notification
+- Script: Not applicable - automated only
+- Re-evaluate: After 30 days with updated contact history
+
+SEGMENT-SPECIFIC STRATEGIES
+-----------------------------
+
+RETIRED CUSTOMERS
+- Key motivations: Security, stable income, preserving savings
+- Messaging: "Protect your retirement savings with guaranteed returns"
+- Objection: Worried about locking funds → Offer 1-3 month terms
+- Best channel: Phone call (prefer human contact)
+- Best time: 10AM-12PM weekdays
+
+MANAGEMENT & EXECUTIVES
+- Key motivations: Optimizing returns, tax efficiency, portfolio diversification
+- Messaging: "Maximize your surplus with competitive fixed returns"
+- Objection: Better returns elsewhere → Compare risk-adjusted returns
+- Best channel: Relationship manager + email
+- Best time: Before 9AM or after 5PM (outside core work hours)
+
+YOUNG PROFESSIONALS (25-35)
+- Key motivations: Building savings habits, goal-based saving
+- Messaging: "Start building your financial future with a term deposit"
+- Objection: Want flexibility → Offer ladder strategy (multiple short terms)
+- Best channel: Digital banking, SMS, WhatsApp
+- Best time: Evenings and weekends
+
+HOMEOWNERS WITH HOUSING LOAN
+- Key motivations: Financial security alongside existing commitments
+- Messaging: "Build a safety net alongside your mortgage"
+- Objection: Already have financial commitments → Show complementary nature
+- Best channel: Phone call + mailed brochure
+- Best time: 6PM-8PM weekdays
+
+CUSTOMERS WITH PREVIOUS SUCCESSFUL CONTACT
+- These are the hottest leads in the database
+- Personalize messaging to reference previous positive experience
+- Offer loyalty bonus rate (0.1-0.25% additional interest)
+- Fast-track through verification process
+
+CAMPAIGN PERFORMANCE BEST PRACTICES
+--------------------------------------
+
+1. OPTIMAL CONTACT FREQUENCY: Maximum 3 contacts per campaign cycle. More contacts significantly increase opt-out rates.
+
+2. TIME SINCE LAST CONTACT: Wait at least 30 days between campaigns for the same customer. Customers contacted within 7 days have 60% lower conversion rates.
+
+3. CALL DURATION CORRELATION: Calls lasting 5-15 minutes have the highest conversion rates. Calls under 2 minutes almost never convert. Very long calls (>25 min) suggest resistance.
+
+4. MONTH PERFORMANCE:
+- Highest conversion months: March, September, October, December
+- Lower conversion months: May, June, July (summer / holiday period)
+- January and February: New year planning conversations - moderate conversion
+
+5. PREVIOUS CAMPAIGN OUTCOME IMPACT:
+- poutcome = success: 3x higher conversion rate
+- poutcome = failure: Still worth contacting but adjust expectations
+- poutcome = unknown: Treat as a fresh lead
+
+6. EDUCATION & JOB CORRELATIONS:
+- Tertiary education + management job: Highest conversion probability
+- Blue-collar workers: Below average conversion but not negligible
+- Students and unemployed: Lowest conversion, focus resources elsewhere
+
+AI MODEL INTEGRATION GUIDELINES
+----------------------------------
+
+The AI prediction model provides a probability score from 0-100%.
+Use these scores to:
+
+1. PRIORITIZE CALL LISTS: Sort customers by probability descending
+2. ASSIGN RESOURCES: High probability → senior staff, Low → automated
+3. PERSONALIZE MESSAGING: Use top positive factors from SHAP analysis
+4. TRACK ROI: Compare AI-targeted campaigns vs. random campaigns
+5. CONTINUOUS IMPROVEMENT: Feed actual outcomes back to retrain model quarterly
+
+COMPLIANCE AND ETHICS
+-----------------------
+
+1. Always follow Do-Not-Call registry regulations
+2. Obtain explicit consent before recording calls
+3. Be transparent about products - never mislead on interest rates
+4. Follow GDPR/data protection for customer data usage
+5. Document all customer interactions in CRM
+6. Never pressure vulnerable customers (elderly, financially stressed)
+7. Offer the option to be removed from marketing lists immediately

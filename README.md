@@ -351,12 +351,3 @@ The ML model preserves the original research pipeline:
 
 ---
 
-## 💼 Interview Talking Points
-
-See [`INTERVIEW_PREP.md`](./INTERVIEW_PREP.md) for a complete list of questions and answers covering:
-- ML model design decisions
-- LangChain architecture choices
-- RAG implementation
-- JWT security design
-- PostgreSQL schema decisions
-- System design at scale

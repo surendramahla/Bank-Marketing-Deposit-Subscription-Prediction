@@ -17,7 +17,7 @@ pydantic-settings==2.3.4
 # ── ML / Data Science (Original dependencies preserved) ──────
 scikit-learn==1.8.0
 pandas==2.3.3
-numpy==2.3.5
+langchain 0.2.6 depends on numpy<2
 joblib==1.5.3
 imbalanced-learn==0.14.2      # Required to load pipeline.pkl (SMOTE)
 shap==0.46.0                  # SHAP explainability
